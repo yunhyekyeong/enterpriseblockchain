@@ -1,0 +1,211 @@
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+
+.scroll-down {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translateX(-50%);
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* bg 검정 */
+.black {
+  background-color: #000;
+  color: #fff;
+}
+
+/* 텍스트 스타일 */
+.tit {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.28;
+  word-break: keep-all;
+}
+
+/* 카드 리스트 */
+.card-list {
+  display: flex;
+  gap: 40px;
+}
+
+.card-item {
+  position: relative;
+  width: 400px;
+  height: 540px;
+  padding: 34px;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.card-bg::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-blend-mode: multiply;
+  background-color: hsla(0, 0%, 42%, 0.3);
+  content: "";
+}
+.card-bg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  filter:url(#blur);
+}
+
+.card-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 34px;
+}
+
+.card-header {
+  position: relative;
+  min-height: 100px;
+}
+.card-header > span {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  font-size: 30px;
+  line-height: 0.67;
+  color: #fff;
+  text-align: right;
+  font-family: Archivo;
+}
+.card-tit {
+  font-size: 50px;
+  line-height: 1;
+  font-weight: 600;
+  margin-right: 46px;
+  word-break: break-word;
+}
+
+.card-content p {
+  font-weight: 700;
+}
+
+.card-footer {
+  position: absolute;
+  left: 34px;
+  bottom: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 328px;
+}
+.card-footer .card-txt {
+  font-weight: 700;
+}
+.card-footer .card-cate {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.67;
+}
+.ico-card {
+  width: 40px;
+  height: 40px;
+  background: url(/assets/img/icon-contract.png) no-repeat 50% / cover;
+}
+.card-user {
+  display: flex;
+  align-items: center;
+}
+.card-user .user-img {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background-color: #e657af;
+}
+.card-user .user-name {
+  font-weight: 600;
+}
+
+.card-blur {
+  display: none;
+}
+
+
+/* 카드아웃라인 레인보우 */
+.rainbow-line {
+  position: relative;
+  border: 2px solid transparent;
+  padding: 0;
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(315deg, #e657af, #0049ff, #43cf2e);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.rainbow-txt {
+  background-image: linear-gradient(90deg, #43cf2e, #0049ff, #e657af);
+  background-size: cover;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-top {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 100px;
+  bottom: 40px;
+  z-index: 50;
+  width: 50px;
+  height: 50px;
+  background-color: #111;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.btn-top.active {
+  opacity: 1;
+}
+
+.btn-top.under {
+  position: absolute;
+  bottom: 100px;
+  opacity: 1;
+}

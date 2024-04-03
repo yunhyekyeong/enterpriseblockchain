@@ -1,0 +1,101 @@
+@import "./reset.css";
+@import "./common.css";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translate(0, -100%);
+  width: 100%;
+  padding: 0 100px;
+  color: #fff;
+}
+.header .logo {
+  width: 100px;
+  height: 100px;
+  margin: 17px 0;
+}
+.header .logo a {
+  filter: invert(1);
+  transition: filter 0.5;
+}
+.header .logo img {
+  width: 100%;
+}
+.header .gnb {
+}
+.header .gnb-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 335px;
+  height: 100%;
+  font-size: 1.12rem;
+  font-weight: 600;
+  transition: 0.5s;
+}
+.header .gnb-item {
+}
+.header .gnb-item:nth-of-type(3) {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.header .gnb-item .lang-icon {
+  display: inline-block;
+}
+.header .gnb-item .lang-icon svg path {
+  transition: 0.5s;
+}
+.header .gnb-item .lang-name {
+  display: inline-block;
+  padding: 0 5px;
+}
+.header .gnb-item .lang-list {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  border: 1px solid #5a5a5a;
+  background-color: #000;
+  border-radius: 6px;
+}
+.header .gnb-item .lang-item > a {
+  display: block;
+  padding: 2px 14px 4px 13px;
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: 600;
+}
+
+.footer {
+  width: 100vw;
+}
+.footer .footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 100px;
+  padding: 58px 0;
+}
+.footer .footer-inner .add-list {
+}
+.footer .footer-inner .add-item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+.footer .footer-inner .add-item + .add-item {
+  margin-top: 10px;
+}
+.footer .footer-inner .footer-logo {
+}
+.footer .footer-inner .footer-logo figure {
+  width: 193px;
+}
+.footer .footer-inner .footer-logo {
+}
