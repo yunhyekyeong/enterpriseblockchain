@@ -12,16 +12,13 @@ gsap.ticker.lagSmoothing(0);
 
 ScrollTrigger.create({
   trigger: ".sc-intro",
-  start: "5% 5%",
-  end: "5% 5%",
+  start: "11% 0%",
+  end: "100% 100%",
   onEnter: function () {
-    gsap.to(".header", { y: 0 });
+    document.querySelector(".header").classList.add('show');
   },
-  onLeave: function () {
-    gsap.to(".header", { y: 0 });
-  },
-  onEnterBack: function () {
-    gsap.to(".header", { y: '-100%' });
+  onLeaveBack: function () {
+    document.querySelector(".header").classList.remove("show");
   },
 });
 

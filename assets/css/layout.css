@@ -9,11 +9,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transform: translate(0, -100%);
+    transform: translateY(-100%);
   width: 100%;
   padding: 0 100px;
   color: #fff;
+  transition: transform .3s;
 }
+
+header.show{
+  transform: translateY(0);
+}
+
 .header .logo {
   width: 100px;
   height: 100px;
