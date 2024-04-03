@@ -54,21 +54,24 @@ const showcaseTl = gsap.timeline({
     start: "0% 0%",
     end: "100% 100%",
     scrub: 0,
-  },
-  ease: "none",
+  }
 });
-showcaseTl.to(".sc-intro .group-video", { position: "static" });
-showcaseTl.to(".sc-intro .group-desc", { position: "static" });
-showcaseTl.to(".sc-showcase .group-bg", { opacity: 0.6 }, "a");
-showcaseTl.to(".sc-showcase .group-description", { opacity: 1 }, "a");
-showcaseTl.to(".sc-showcase .group-description .desc:nth-of-type(1)",{ x: 368 },"b");
-showcaseTl.to(".sc-showcase .group-description .desc:nth-of-type(3)",{ x: -368 },"b");
-showcaseTl.to(".sc-showcase .group-bg", { opacity: 1 }, "c");
-showcaseTl.to(".sc-showcase .group-description", { opacity: 0 }, "c");
-showcaseTl.to(".sc-showcase .group-bg figure:nth-of-type(1)", { height: 0, });
-showcaseTl.to(".sc-showcase .group-bg figure:nth-of-type(2)", { height: 0, });
-showcaseTl.to(".sc-showcase .group-bg", { opacity: 0.6 }, "d");
-showcaseTl.to(".sc-showcase .showcase-inner > .desc", { opacity: 1 }, "d");
+showcaseTl
+  .to(".sc-showcase", { '--opacity': 1 }, "a")
+  .to(".sc-showcase .group-desc", { opacity: 1 }, "a")
+
+  .to(".sc-showcase .group-desc .desc:nth-of-type(1)",{ xPercent: 100},"b")
+  .to(".sc-showcase .group-desc .desc:nth-of-type(3)",{ xPercent: -100 },"b")
+  .to(".sc-showcase", { '--opacity': 0 }, "b")
+
+  .to(".sc-showcase .group-desc", { opacity: 0 }, "c")
+
+  .to(".sc-showcase .group-bg figure:nth-of-type(1)", { height: 0, })
+  .to(".sc-showcase .group-bg figure:nth-of-type(2)", { height: 0, })
+  
+  .to(".sc-showcase", { '--opacity': 1 }, "d")
+  .to(".sc-showcase .sticky > .desc", { opacity: 1 }, "d")
+;
 
 const challengeTl01 = gsap.timeline({
   scrollTrigger: {

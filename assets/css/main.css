@@ -63,16 +63,24 @@
 
 .sc-showcase {
   position: relative;
-  width: 100vw;
   height: 700vh;
-  background-color: #000;
+  --opacity:0;
 }
-.sc-showcase .showcase-inner {
+.sc-showcase .sticky {
   position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
   height: 100vh;
+}
+.sc-showcase .sticky::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.6);
+  opacity: var(--opacity);
+  z-index: 1;
 }
 .sc-showcase .group-bg {
   position: relative;
@@ -98,11 +106,11 @@
 }
 .sc-showcase .group-bg figure img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
 }
-.sc-showcase .showcase-inner > .desc,
-.sc-showcase .group-description {
+.sc-showcase .sticky > .desc,
+.sc-showcase .group-desc {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -110,19 +118,21 @@
   z-index: 1;
   opacity: 0;
 }
-.sc-showcase .group-description .desc {
+.sc-showcase .group-desc .desc {
   font-size: 100px;
   line-height: 1.2;
   font-weight: 700;
   color: #fff;
+  z-index: 2;
 }
-.sc-showcase .showcase-inner > .desc {
+.sc-showcase .sticky > .desc {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.67;
   color: #fff;
   transform: translate(-50%, -50%);
   opacity: 0;
+  z-index: 2;
 }
 
 .sc-challenge {
