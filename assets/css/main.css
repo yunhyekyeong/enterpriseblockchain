@@ -38,7 +38,7 @@
   left: 50%;
   width: auto;
   transform: translate(-50%, -50%);
-  font-size: 3.25rem;
+  font-size: 52px;
   font-weight: 600;
   line-height: 1.35;
   white-space: nowrap;
@@ -100,13 +100,13 @@
   opacity: 0;
 }
 .sc-showcase .group-description .discription {
-  font-size: 6.25rem;
+  font-size: 100px;
   line-height: 1.2;
   font-weight: 700;
   color: #fff;
 }
 .sc-showcase .showcase-inner > .discription {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
   line-height: 1.67;
   color: #fff;
@@ -131,7 +131,7 @@
   width: 50%;
   padding-left: 100px;
   margin-left: auto;
-  font-size: 1.5rem;
+  font-size: 24px;
   line-height: 1.67;
   font-weight: 700;
 }
@@ -218,7 +218,6 @@
 }
 .sc-gallery .group-img .img-disc {
   margin-top: 12px;
-  font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
 }
@@ -282,7 +281,7 @@
 }
 .sc-possbility .group-possbility .possbility-disc {
   margin: 24px 0 0 20px;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1.67;
 }
@@ -306,7 +305,7 @@
   text-align: center;
 }
 .sc-possbility .group-slide .cube-desc strong {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
 }
 .sc-possbility .group-possbility .cube-desc p {
@@ -383,7 +382,7 @@
   left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.25;
   text-align: center;
@@ -668,7 +667,6 @@
   position: absolute;
   bottom: 45px;
   right: 0;
-  font-size: 1rem;
   font-weight: 700;
   line-height: 1.63;
 }
@@ -763,7 +761,7 @@
   transform: translateX(-50%);
   font-weight: 600;
   transition: 0.3s;
-  font-size: 1.5rem;
+  font-size: 24px;
   line-height: 1.67;
 }
 .sc-slide .group-down .down-txt:nth-child(2) {
@@ -784,13 +782,13 @@
   opacity: 0;
 }
 .sc-creater .creater-desc strong {
-  font-size: 3.75rem;
+  font-size: 60px;
   font-weight: 700;
   line-height: 1.2;
 }
 .sc-creater .creater-desc p {
   margin-top: 26px;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
   line-height: 1.67;
 }
