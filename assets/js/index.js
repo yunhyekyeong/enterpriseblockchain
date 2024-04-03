@@ -10,6 +10,8 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
+
+
 ScrollTrigger.create({
   trigger: ".sc-intro",
   start: "11% 0%",
@@ -22,25 +24,29 @@ ScrollTrigger.create({
   },
 });
 
+gsap.utils.defults = {
+  ease: "none",
+};
+
 const introTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-intro",
     start: "0% 0%",
     end: "100% 100%",
     scrub: 0,
-  },
-  ease: "none",
+  }
 });
-introTl.to(".sc-intro .group-video", { opacity: 0.6, position: "fixed" });
-introTl.to(".sc-intro .group-discription .discription:nth-of-type(1)", { opacity: 1, });
-introTl.to(".sc-intro .group-discription .discription:nth-of-type(1)", { opacity: 0, });
-introTl.to(".sc-intro .group-discription .discription:nth-of-type(2)", { opacity: 1, });
-introTl.to(".sc-intro .group-discription .discription:nth-of-type(2)", { opacity: 0, });
-introTl.to(".sc-intro .group-discription .discription:nth-of-type(3)", { opacity: 1, });
-introTl.to(".sc-intro .group-discription .discription:nth-of-type(3)", { opacity: 0, });
-introTl.to(".sc-intro .group-discription .discription:nth-of-type(4)", { opacity: 1, });
-introTl.to(".sc-intro .group-discription .discription:nth-of-type(4)", { opacity: 0, });
-introTl.to(".sc-intro .scroll-down", { opacity: 0, });
+introTl
+  .to(".sc-intro", { "--opacity": 0.6 }, "a")
+  .from(".sc-intro .group-desc .desc:nth-of-type(1)", { opacity: 0 }, "a")
+  .to(".sc-intro .group-desc .desc:nth-of-type(1)", { opacity: 0 })
+  .from(".sc-intro .group-desc .desc:nth-of-type(2)", { opacity: 0 })
+  .to(".sc-intro .group-desc .desc:nth-of-type(2)", { opacity: 0 })
+  .from(".sc-intro .group-desc .desc:nth-of-type(3)", { opacity: 0 })
+  .to(".sc-intro .group-desc .desc:nth-of-type(3)", { opacity: 0 })
+  .from(".sc-intro .group-desc .desc:nth-of-type(4)", { opacity: 0 })
+  .to(".sc-intro .scroll-down", { opacity: 0 })
+;
 
 const showcaseTl = gsap.timeline({
   scrollTrigger: {
@@ -52,17 +58,17 @@ const showcaseTl = gsap.timeline({
   ease: "none",
 });
 showcaseTl.to(".sc-intro .group-video", { position: "static" });
-showcaseTl.to(".sc-intro .group-discription", { position: "static" });
+showcaseTl.to(".sc-intro .group-desc", { position: "static" });
 showcaseTl.to(".sc-showcase .group-bg", { opacity: 0.6 }, "a");
 showcaseTl.to(".sc-showcase .group-description", { opacity: 1 }, "a");
-showcaseTl.to(".sc-showcase .group-description .discription:nth-of-type(1)",{ x: 368 },"b");
-showcaseTl.to(".sc-showcase .group-description .discription:nth-of-type(3)",{ x: -368 },"b");
+showcaseTl.to(".sc-showcase .group-description .desc:nth-of-type(1)",{ x: 368 },"b");
+showcaseTl.to(".sc-showcase .group-description .desc:nth-of-type(3)",{ x: -368 },"b");
 showcaseTl.to(".sc-showcase .group-bg", { opacity: 1 }, "c");
 showcaseTl.to(".sc-showcase .group-description", { opacity: 0 }, "c");
 showcaseTl.to(".sc-showcase .group-bg figure:nth-of-type(1)", { height: 0, });
 showcaseTl.to(".sc-showcase .group-bg figure:nth-of-type(2)", { height: 0, });
 showcaseTl.to(".sc-showcase .group-bg", { opacity: 0.6 }, "d");
-showcaseTl.to(".sc-showcase .showcase-inner > .discription", { opacity: 1 }, "d");
+showcaseTl.to(".sc-showcase .showcase-inner > .desc", { opacity: 1 }, "d");
 
 const challengeTl01 = gsap.timeline({
   scrollTrigger: {

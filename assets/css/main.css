@@ -8,31 +8,43 @@
 
 .sc-intro {
   position: relative;
-  width: 100vw;
   height: 800vh;
-  overflow: hidden;
-  background-color: #000;
+  --opacity: 0;
 }
-.sc-intro .group-video {
-  position: static;
+
+.sc-intro .sticky {
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100vw;
   height: 100vh;
-  opacity: 1;
+}
+
+.sc-intro .group-video {
+  width: 100%;
+  height: 100%;
 }
 .sc-intro .group-video video {
-  width: 100vw;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.sc-intro .group-discription {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
-  transform: translate(-50%, -50%);
+.sc-intro .group-desc {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
-.sc-intro .group-discription .discription {
+.sc-intro .group-desc::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: var(--opacity);
+}
+.sc-intro .group-desc .desc {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -43,9 +55,8 @@
   line-height: 1.35;
   white-space: nowrap;
   color: #fff;
-  opacity: 0;
 }
-.sc-intro .group-discription .discription:last-of-type {
+.sc-intro .group-desc .desc:last-of-type {
   font-size: 24px;
   line-height: 1.67;
 }
@@ -90,7 +101,7 @@
   height: 100%;
   object-fit: cover;
 }
-.sc-showcase .showcase-inner > .discription,
+.sc-showcase .showcase-inner > .desc,
 .sc-showcase .group-description {
   position: absolute;
   top: 50%;
@@ -99,13 +110,13 @@
   z-index: 1;
   opacity: 0;
 }
-.sc-showcase .group-description .discription {
+.sc-showcase .group-description .desc {
   font-size: 100px;
   line-height: 1.2;
   font-weight: 700;
   color: #fff;
 }
-.sc-showcase .showcase-inner > .discription {
+.sc-showcase .showcase-inner > .desc {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.67;
@@ -442,7 +453,7 @@
   display: block;
   width: 150px;
   opacity: 0;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
 .sc-service .group-row .lock-box img {
   width: 100%;
