@@ -73,19 +73,18 @@ showcaseTl
   .to(".sc-showcase .sticky > .desc", { opacity: 1 }, "d")
 ;
 
-const challengeTl01 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".sc-challenge.ch01",
-    start: "-4% 0%",
-    end: "0% 0%",
-    // markers: true,
-    scrub: 0,
+ScrollTrigger.create({
+  trigger: ".sc-challenge.ch01",
+  start: "-4% 0%",
+  end: "0% 0%",
+  markers: true,
+  onEnter: function () {
+    document.querySelector(".header").classList.add("dark");
   },
-  ease: "none",
+  onLeaveBack: function () {
+    document.querySelector(".header").classList.remove("dark");
+  },
 });
-challengeTl01.to(".header", { color: "#000" }, "e");
-challengeTl01.to(".header .logo a", { filter: "invert(0)" }, "e");
-challengeTl01.to(".header .lang-icon svg path", { stroke: "#000" }, "e");
 
 const proveTl01 = gsap.timeline({
   scrollTrigger: {
@@ -193,7 +192,7 @@ const serviceTl02 = gsap.timeline({
     trigger: ".sc-service .group-col",
     start: "0% 0%",
     end: "100% 100%",
-    markers: true,
+    // markers: true,
     scrub: 0,
     onEnter: function () {
       gsap.to(".sc-service .group-row", { opacity: 0 },'j');

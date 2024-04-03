@@ -9,15 +9,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-    transform: translateY(-100%);
+  transform: translateY(-100%);
   width: 100%;
   padding: 0 100px;
   color: #fff;
   transition: transform .3s;
-}
-
-header.show{
-  transform: translateY(0);
 }
 
 .header .logo {
@@ -27,10 +23,23 @@ header.show{
 }
 .header .logo a {
   filter: invert(1);
-  transition: filter 0.5;
 }
 .header .logo img {
   width: 100%;
+}
+
+/* 헤더 클래스 이벤트 */
+header.show{
+  transform: translateY(0);
+}
+header.dark{
+  color: #000;
+}
+header.dark .logo a{
+  filter: invert(0);
+}
+header.dark .lang-icon svg path{
+  stroke:#000
 }
 
 .header .gnb-list {
