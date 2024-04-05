@@ -41,6 +41,15 @@ header.dark .logo a{
 header.dark .lang-icon svg path{
   stroke:#000
 }
+.dark header.dark{
+  color: #fff;
+}
+.dark header.dark .logo a{
+ filter: invert(1);
+}
+.dark header.dark .lang-icon svg path{
+  stroke:#fff
+}
 
 .header .gnb-list {
   display: flex;
