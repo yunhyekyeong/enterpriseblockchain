@@ -24,9 +24,13 @@ ScrollTrigger.create({
   },
 });
 
+
+
 gsap.utils.defults = {
   ease: "none",
 };
+
+
 
 const introTl = gsap.timeline({
   scrollTrigger: {
@@ -73,6 +77,8 @@ showcaseTl
   .to(".sc-showcase .sticky > .desc", { opacity: 1 }, "d")
 ;
 
+
+
 ScrollTrigger.create({
   trigger: ".sc-challenge",
   start: "-4% 0%",
@@ -84,6 +90,7 @@ ScrollTrigger.create({
     document.querySelector(".header").classList.remove("dark");
   },
 });
+
 
 
 const proveTl01 = gsap.timeline({
@@ -101,11 +108,12 @@ proveTl01
 ;
 
 
+
 ScrollTrigger.create({
   trigger: `[data-theme="dark"]`,
   start: "0% 50%",
   end: "100% 50%",
-  markers: true,
+  // markers: true,
   toggleClass: {
     targets: "body",
     className: "dark",
@@ -113,7 +121,8 @@ ScrollTrigger.create({
 });
 
 
-const fullWidth = window.innerWidth
+
+
 const possibleTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-possible",
@@ -121,7 +130,7 @@ const possibleTl = gsap.timeline({
     end: "100% 100%",
     scrub: 0,
     invalidateOnRefresh: true,
-  },
+  }
 });
 possibleTl.to(".sc-possible .box", {
   xPercent: -100,
@@ -129,6 +138,8 @@ possibleTl.to(".sc-possible .box", {
     return window.innerWidth;
   },
 });
+
+
 
 const featureTl = gsap.timeline({
   scrollTrigger: {
@@ -144,6 +155,9 @@ featureTl
   .from(".sc-feature .feature-item:nth-of-type(3)", { xPercent: "50" }, "a")
 ;
 
+
+
+
 const featureListTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-feature",
@@ -156,7 +170,7 @@ const featureListTl = gsap.timeline({
     onLeaveBack: function () {
       document.querySelector(".sc-feature .feature-list").classList.remove("blur");
     },
-  },
+  }
 });
 featureListTl.from(".sc-feature .feature-tit", { opacity: 0 });
 
@@ -191,6 +205,7 @@ serviceRowTl
 ;
 
 
+
 gsap.set(".sc-service .col", { autoAlpha: 0 });
 const serviceColTl = gsap.timeline({
   scrollTrigger: {
@@ -208,7 +223,8 @@ const serviceColTl = gsap.timeline({
     },
   }
 });
-serviceColTl.from(".sc-service .id-txt", { opacity: 1 });
+serviceColTl.from(".sc-service .col .id-txt", { opacity: 0 });
+
 
 
 
@@ -218,7 +234,6 @@ const serviceAnyTl = gsap.timeline({
     trigger: ".sc-service .any",
     start: "0% 0%",
     end: "100% 100%",
-    // markers: true,
     scrub: 0,
     onEnter: function () {
       gsap.set(".sc-service .col .id-box", { autoAlpha: 0 });
@@ -237,13 +252,13 @@ serviceAnyTl
 ;
 
 
+
 gsap.set(".sc-service .whoever", { autoAlpha: 0 });
 const serviceWhoTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-service .whoever",
     start: "0% 0%",
     end: "100% 100%",
-    // markers: true,
     scrub: 0,
     onEnter: function () {
       gsap.set(".sc-service .any", { autoAlpha: 0 });
@@ -259,6 +274,7 @@ serviceWhoTl
   .from(".sc-service .whoever .whoever-tit", { opacity: 0 })
   .from(".sc-service .whoever .id-shadow", { opacity: 0 })
 ;
+
 
 
 
@@ -278,79 +294,98 @@ proveTl02
 
 
 
+
 const slideTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-slide",
     start: "0% 0%",
     end: "100% 100%",
-    // markers: true,
     scrub: 0,
     invalidateOnRefresh: true,
-    onEnter: function () {
-      gsap.to(".sc-slide .group-down", { opacity: 1 }, "s");
+    toggleClass: {
+      targets: ".sc-slide .arrow-box",
+      className: "show",
     },
-    onLeave: function () {
-      gsap.to(".sc-slide .group-down", { opacity: 0 });
-    },
-    onEnterBack: function () {
-      gsap.to(".sc-slide .group-down", { opacity: 1 });
-    },
-    onLeaveBack: function () {
-      gsap.to(".sc-slide .group-down", { opacity: 0 });
+    onUpdate: function (self) {
+      if (self.progress >= 0.5) {
+        document.querySelector(".sc-slide .arrow-box .txt").textContent = "미래금융";
+      } else {
+        document.querySelector(".sc-slide .arrow-box .txt").textContent = "전통금융";
+      }
     },
   }
 });
-slideTl.to(".sc-slide .slide-inner .slide-box", { x: -811 }, 'a');
-slideTl.to(".sc-slide .group-down .down-txt:nth-child(1)", { opacity: 0 },'a');
-slideTl.to(".sc-slide .group-down .down-txt:nth-child(2)", { opacity: 1 }, 'a');
+slideTl.to(".sc-slide .inner .slide-box", {
+  xPercent: -100,
+  x: function () {
+    return window.innerWidth - 100;
+  },
+});
+
+
+
 
 const createrTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-creater",
     start: "0% 0%",
     end: "100% 100%",
-    // markers: true,
     scrub: 0,
-  },
-  ease: "none",
+  }
 });
-createrTl.to('.sc-creater .creater-desc', { opacity: 1 });
-createrTl.to(".sc-creater .scroll-down", { opacity: 1 });
-createrTl.to('.sc-creater .creater-desc', { opacity: 0 },'t');
-createrTl.to(".sc-creater .scroll-down", { display: 'none' },'t');
+createrTl
+  .from(".sc-creater .desc", { opacity: 0 })
+  .from(".sc-creater .scroll-down", { opacity: 0 })
+  .to(".sc-creater .desc", { opacity: 0 }, "a")
+  .to(".sc-creater .scroll-down", { opacity: 0 }, "a")
+;
+
+
+
 
 const progressTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-progress",
     start: "0% 0%",
     end: "100% 100%",
-    // markers: true,
+    invalidateOnRefresh: true,
     scrub: 0,
   },
-  ease: "none",
-})
-progressTl.to(".sc-progress .progress-inner .progress-box", { x: -1159 });
+});
+progressTl.to(".sc-progress .box", {
+  xPercent: -100,
+  x: function () {
+    return window.innerWidth;
+  },
+});
+
+
+
 
 const groundTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sc-ground",
     start: "0% 0%",
     end: "100% 100%",
-    // markers: true,
     scrub: 0,
-    ToggleEvent: {}
   },
-  ease: "none",
 });
-groundTl.to(".banner-join", { bottom: 0 });
+groundTl.to(".sc-ground .banner", { bottom: 0 });
+
+
 
 ScrollTrigger.create({
   trigger: ".footer",
   start: "-60px 100%",
   end: "100% 0",
-  // markers: true,
-  toggleClass: { targets: ".btn-top", className: "under" },
+  toggleClass: {
+    targets: ".btn-top",
+    className: "under"
+  },
 });
+
+
+
 
 // 탑스크롤
 document.querySelector(".btn-top").addEventListener("click", () => {

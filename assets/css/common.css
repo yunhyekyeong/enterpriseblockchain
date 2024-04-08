@@ -1,6 +1,7 @@
 body.dark{
   color: #fff;
   background-color: #000;
+  transition: .5s;
 }
 
 .blind {
@@ -13,7 +14,7 @@ body.dark{
 }
 
 .scroll-down {
-  position: fixed;
+  position: absolute;
   bottom: 40px;
   left: 50%;
   width: 40px;
@@ -33,6 +34,12 @@ body.dark{
   font-weight: 700;
   line-height: 1.28;
   word-break: keep-all;
+}
+
+.subtit {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.67;
 }
 
 /* 카드 리스트 */
