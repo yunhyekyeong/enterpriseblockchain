@@ -186,11 +186,11 @@ const serviceRowTl = gsap.timeline({
 });
 serviceRowTl
   .set(".sc-service .row .ico-lock", { opacity: 0 }, "a")
-  .to(".sc-service .row .row-box", {
-    x: function() {
-      return -document.querySelector(".sc-service .row-box .tit").offsetWidth;
-    }
-  })
+  // .to(".sc-service .row .row-box", {
+  //   x: function() {
+  //     return -document.querySelector(".sc-service .row-box .tit").offsetWidth;
+  //   }
+  // })
   .to(".sc-service .row .row-box", {
     x: function() {
       return -document.querySelector(".sc-service .row-box .tit").offsetWidth + 100;
@@ -395,8 +395,8 @@ document.querySelector(".btn-top").addEventListener("click", () => {
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
   const currentTop = window.scrollY;
-  const showTop = document.querySelector(".sc-showcase").offsetTop;
+  const showCase = document.querySelector(".sc-showcase").offsetTop;
   const btnTop = document.querySelector(".btn-top");
-  btnTop.classList.toggle("active", currentTop > showTop && currentTop < lastScroll);
+  btnTop.classList.toggle("active", currentTop > showCase && currentTop < lastScroll);
   lastScroll = currentTop;
 });
